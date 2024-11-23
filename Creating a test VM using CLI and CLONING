@@ -1,0 +1,13 @@
+#Creating a test VM using CLI and CLONING
+
+###Using CLI mode: with BRDGE NETWORk###
+virt-install --virt-type=kvm --name rhel8 --ram 512 --vcpus=1 --os-variant=rhel8.3 --cdrom=/var/lib/libvirt/boot/rhel-8.3-x86_64-dvd.iso --network=bridge=br0,model=virtio --graphics vnc --disk path=/var/lib/libvirt/images/rhel8.qcow2,size=10,bus=virtio,format=qcow2
+
+###Using CLI mode: DEFAULT NETWORK MODE###
+virt-install --virt-type=kvm --name RHEL-9-3 --ram 1024 --vcpus=1 --os-variant=rhel9.3 --cdrom=/var/lib/libvirt/images/rhel-9.3-x86_64-dvd.iso --network=default,model=virtio --graphics vnc --disk path=/var/lib/libvirt/images/rhel-9-3_test.qcow2,size=10,bus=virtio,format=qcow2
+
+#Find IP
+virsh domifaddr VM_NAME
+
+#Using virt-clone
+virt-clone --original original-vm-name --name new-vm-name --auto-clone
