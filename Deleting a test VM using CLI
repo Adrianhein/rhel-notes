@@ -1,0 +1,7 @@
+#Deleting or removing VM from KVM
+virsh shutdown vm-name
+Try this >>> virsh destroy vm-name <<< if cannot response from above command
+
+virsh undefine vm-name --remove-all-storage
+
+rm -rf /var/lib/libvirt/images/vm-name.qcow2
