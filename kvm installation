@@ -1,1 +1,29 @@
+KVM installation Fedora 39
+1) To Check Virtualization extensions:
+#cat /proc/cpuinfo | egrep "vmx|svm"
+
+2) To Install KVM / QEMU management tools
+#dnf install bridge-utils libvirt virt-install qemu-kvm libvirt-devel virt-top libguestfs-tools guestfs-tools
+
+3) To Check Kernel modules are loaded 
+#lsmod | grep kvm
+
+4) To start KVM daemon 
+#systemctl status libvirtd
+#systemctl start libvirtd
+#systemctl enable libvirtd
+#systemctl status libvirtd
+
+5) To install Virtual machine Manager
+#dnf install install virt-manager
+
+6)
+virsh list --all
+brctl show
+virsh net-list
+
+
+#Creating a test VM using CLI and Virtual Machine Manager
+###Using CLI mode:###
+virt-install --virt-type=kvm --name rhel8 --ram 512 --vcpus=1 --os-variant=rhel8.3 --cdrom=/var/lib/libvirt/boot/rhel-8.3-x86_64-dvd.iso --network=bridge=br0,model=virtio --graphics vnc --disk path=/var/lib/libvirt/images/rhel8.qcow2,size=10,bus=virtio,format=qcow2
 
