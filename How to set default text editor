@@ -1,1 +1,20 @@
 
+
+#Edit the Global Shell Configuration 
+
+#add this below 2 values to "/etc/environment"
+EDITOR='vim'
+VISUAL='vim'
+
+#Then "source /etc/environment"
+
+#For a Single User Edit the Shell Configuration File
+#add this below 2 values to "~/.bash_profile"
+export EDITOR='vim'
+export VISUAL='vim'
+
+#Then "source ~/.bashrc"
+
+
+
+
