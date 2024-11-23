@@ -1,1 +1,9 @@
+######Back up your data before performing a system-wide upgrade as every system upgrade is potentially risky.
 
+dnf upgrade --refresh
+
+system-upgrade download --releasever=40
+
+dnf system-upgrade reboot
+
+https://docs.fedoraproject.org/en-US/quick-docs/upgrading-fedora-offline/
