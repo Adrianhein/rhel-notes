@@ -1,0 +1,34 @@
+## VM's state, including its disk, memory, and configuration, at a specific point in time. 
+
+To pause the VM (recommended for a snapshot):
+virsh suspend vm-name
+
+OR shut down the VM:
+virsh shutdown vm-name
+
+#Create the Snapshot: 
+virsh snapshot-create-as vm-name snapshot-name --disk-only --atomic
+
+#Start the VM
+virsh resume vm-name
+OR
+virsh start vm-name
+
+
+#Create a Snapshot with Memory State
+virsh snapshot-create-as vm-name snapshot-name --disk-only --live
+
+#List Snapshots
+virsh snapshot-list vm-name
+
+
+#Reverting to a Snapshot
+virsh snapshot-revert vm-name snapshot-name
+
+#Delete a Snapshot
+virsh snapshot-delete vm-name snapshot-name
+
+#Snapshot with Additional Options
+--description to add a description of the snapshot.
+--diskspec to specify which disks you want to snapshot.
+virsh snapshot-create-as my-vm snapshot2 --description "Snapshot before upgrade" --disk-only --atomic
