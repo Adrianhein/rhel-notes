@@ -1,1 +1,8 @@
 
+#RUN on KVM Guests below command
+
+systemctl enable serial-getty@ttyS0.service
+
+systemctl start serial-getty@ttyS0.service
+
+https://ostechnix.com/how-to-enable-virsh-console-access-for-kvm-guests/
