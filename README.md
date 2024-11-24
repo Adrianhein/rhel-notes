@@ -1,5 +1,6 @@
 # Linux-notes
 #KVM Basic
+#In this lab, I am using default Network connection between KVM host and guest
 
 => KVM installation demostration on Fedora 39
 
