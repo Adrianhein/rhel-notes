@@ -1,4 +1,7 @@
 
-semanage command not found ?
-
+"semanage" command not found ?
 dnf install policycoreutils-python-utils.noarch -y
+
+
+To use "seinfo"
+dnf install setools-console
