@@ -1,0 +1,4 @@
+
+semanage command not found ?
+
+dnf install policycoreutils-python-utils.noarch -y
