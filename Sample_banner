@@ -25,3 +25,21 @@ cat > /etc/motd << EOF
 ############################################################################
 EOF
 
+
+
+#Create a file under #/etc/profile.d/motd.sh
+touch /etc/profile.d/motd.sh
+chmod 644 /etc/profile.d/motd.sh
+
+#!/bin/bash
+echo -e "
+########################################################################################
+# System Name \e[34m `hostname` \e[0m ,you are logged in as \e[32m `whoami` \e[0m                                #
+# This system is running \e[31m `cat /etc/redhat-release` \e[0m                                     #
+# Kernel is \e[33m `uname -r` \e[0m                                                    #
+# Uptime is \e[33m `uptime |sed 's/.*up ([^,]*),.*/1/'` \e[0m             #
+# Mem Total is \e[31m `cat /proc/meminfo | grep MemTotal | awk  {'print $2'}` kB \e[0m                                                             #
+########################################################################################
+
+"
+
