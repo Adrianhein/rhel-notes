@@ -41,5 +41,7 @@ echo -e "
 # Mem Total is \e[31m `cat /proc/meminfo | grep MemTotal | awk  {'print $2'}` kB \e[0m                                                             #
 ########################################################################################
 
+IP Address => `ip route list | grep default | awk {'print $9'}`
+
 "
 
