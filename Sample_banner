@@ -1,0 +1,27 @@
+echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
+echo "Banner /etc/motd" >>/etc/ssh/sshd_config
+systemctl restart sshd
+
+cat > /etc/issue.net << EOF
+############################################################################
+#                                                                          #
+# This system is created by Adrian for lab purpose.                        #
+# System Name  MariadbLab                                                  #
+# This system is running CentOS Stream release 9                           #
+# kernel is 5.14.0-536.el9.x86_64                                          #
+#                                                                          #
+############################################################################
+EOF
+
+
+cat > /etc/motd << EOF
+############################################################################
+#                                                                          #
+# This system is created by Adrian for lab purpose.                        #
+# System Name  MariadbLab                                                  #
+# This system is running CentOS Stream release 9                           #
+# kernel is 5.14.0-536.el9.x86_64                                          #
+#                                                                          #
+############################################################################
+EOF
+
